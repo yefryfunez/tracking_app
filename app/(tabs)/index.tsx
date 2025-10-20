@@ -21,8 +21,8 @@ interface SupabaseError {
 
 // *****************************************************************************
 // F*** enviroment variables (this is just a test)
-const supabaseUrl = 'https://gmfmhkduwnwccivhuenk.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtZm1oa2R1d253Y2Npdmh1ZW5rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUzOTk2MjQsImV4cCI6MjA3MDk3NTYyNH0.HbdwrJLu1p8BsgeYqGpAjVoh95F2RVv38cIGS7ADpoA';
+const supabaseUrl = 'https://xxxxxxxxx.supabase.co';
+const supabaseAnonKey = 'xxxxxxxxxx';
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 
@@ -212,7 +212,7 @@ const styles = StyleSheet.create({
 
 
 
-// // plantilla
+// // plantilla original
 // import { Image } from 'expo-image';
 // import { Platform, StyleSheet } from 'react-native';
 
