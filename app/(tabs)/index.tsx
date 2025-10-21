@@ -1,4 +1,3 @@
-import { createClient } from '@supabase/supabase-js';
 import { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
@@ -20,10 +19,9 @@ interface SupabaseError {
 
 
 // *****************************************************************************
-// F*** enviroment variables (this is just a test)
-const supabaseUrl = 'https://gmfmhkduwnwccivhuenk.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtZm1oa2R1d253Y2Npdmh1ZW5rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUzOTk2MjQsImV4cCI6MjA3MDk3NTYyNH0.HbdwrJLu1p8BsgeYqGpAjVoh95F2RVv38cIGS7ADpoA';
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// conexion con supabase
+import { supabase } from '../../lib/supabase';
+
 
 
 
@@ -212,9 +210,8 @@ const styles = StyleSheet.create({
 
 
 
-// // plantilla
 // import { Image } from 'expo-image';
-// import { Platform, StyleSheet } from 'react-native';
+// import { StyleSheet } from 'react-native';
 
 // import { HelloWave } from '@/components/hello-wave';
 // import ParallaxScrollView from '@/components/parallax-scroll-view';
@@ -232,24 +229,10 @@ const styles = StyleSheet.create({
 //           style={styles.reactLogo}
 //         />
 //       }>
+      
 //       <ThemedView style={styles.titleContainer}>
 //         <ThemedText type="title">Welcome!</ThemedText>
 //         <HelloWave />
-//       </ThemedView>
-//       <ThemedView style={styles.stepContainer}>
-//         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-//         <ThemedText>
-//           Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-//           Press{' '}
-//           <ThemedText type="defaultSemiBold">
-//             {Platform.select({
-//               ios: 'cmd + d',
-//               android: 'cmd + m',
-//               web: 'F12',
-//             })}
-//           </ThemedText>{' '}
-//           to open developer tools.
-//         </ThemedText>
 //       </ThemedView>
 //       <ThemedView style={styles.stepContainer}>
 //         <Link href="/modal">
@@ -280,7 +263,21 @@ const styles = StyleSheet.create({
 //         </ThemedText>
 //       </ThemedView>
 //       <ThemedView style={styles.stepContainer}>
-//         <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
+//         <Link href="/modal">
+//             <Link.Trigger>
+//               <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
+//             </Link.Trigger>
+//           <Link.Preview />
+//           <Link.Menu>
+//             <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
+//             <Link.MenuAction title="Share" icon="square.and.arrow.up" onPress={() => alert('Share pressed')} />
+            
+//             <Link.Menu title="More" icon="ellipsis">
+//               <Link.MenuAction title="Delete" icon="trash" destructive onPress={() => alert('Delete pressed')} />
+//             </Link.Menu>
+//           </Link.Menu>
+//         </Link>
+        
 //         <ThemedText>
 //           {`When you're ready, run `}
 //           <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
@@ -304,7 +301,7 @@ const styles = StyleSheet.create({
 //     marginBottom: 8,
 //   },
 //   reactLogo: {
-//     height: 178,
+//     height: 198,
 //     width: 290,
 //     bottom: 0,
 //     left: 0,
